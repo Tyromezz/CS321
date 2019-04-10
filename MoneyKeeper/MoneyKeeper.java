@@ -2,9 +2,12 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class MoneyKeeper {
+	
+	public ArrayList<JPanel> panelList = new ArrayList<>();
 	
 	public static void main(String[] args) {
 		new MoneyKeeper();
@@ -24,6 +27,7 @@ public class MoneyKeeper {
 		//The first JPanel instantiates an Incomes Class
 		JPanel incomePanel = new JPanel();
 		Incomes inc = new Incomes(incomePanel);
+		this.panelList.add(incomePanel);
 		
 		
 		
