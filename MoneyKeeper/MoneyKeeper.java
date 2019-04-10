@@ -38,6 +38,7 @@ public class MoneyKeeper {
 		
 		//Create the second JPanel. Add a JLabel and JList and
 		//make use the JPanel is not visible.
+		//DELETE THIS CODE BLOCK WHEN EXPENSES CLASS IS MADE
 		final JPanel expensePanel = new JPanel();
 		expensePanel.setVisible(false);
 		JLabel listLbl = new JLabel("Expenses:");

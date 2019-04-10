@@ -13,6 +13,7 @@ public class Incomes {
 	public Incomes(JPanel i) {
 		this.incomes = i;
 		
+		
 		//Income Type Options
 		String[] incomeOps = { "Primary Job", "Second Job", "Side Job", "Hobby", "Other"};
 	
