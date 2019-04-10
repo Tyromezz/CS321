@@ -11,6 +11,7 @@ public class Incomes {
 	
 	public int getIncome() {
 		System.out.println(this.incomes.getComponent(0));
+		return 0;
 		
 	}
 	
