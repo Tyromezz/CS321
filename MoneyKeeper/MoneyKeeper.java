@@ -30,28 +30,11 @@ public class MoneyKeeper {
 		this.panelList.add(incomePanel);
 		
 		
-		
-		/*
-		 * 
-		 *  This is a basic new button, it creates a new internal class to re-define what to do when the button is pressed.
-		 *  
-		JButton addInc = new JButton("Add Income");
-		addInc.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				JLabel newIncome = new JLabel((String)incms.getSelectedItem());
-				//JTextField newIncomeAmt = new JTextField(incomeAmmt.getText(),8);
-				JTextArea newAmmt = new JTextArea(incomeAmmt.getText(), 1, 8);
-				
-				incomePanel.add(newIncome);
-				incomePanel.add(newAmmt);
-				incomePanel.updateUI();
-			}
-		});
-		incomePanel.add(addInc);
+		/* Add this code when Expenses class is made
+		JPanel expensePanel = new JPanel();
+		Incomes exp = new Expenses(expensePanel);
+		this.panelList.add(expensePanel);
 		*/
-		
-		
 		
 		//Create the second JPanel. Add a JLabel and JList and
 		//make use the JPanel is not visible.
