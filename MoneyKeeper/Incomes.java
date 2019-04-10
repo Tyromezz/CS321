@@ -1,10 +1,12 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 public class Incomes {
-	JPanel incomes;
+	private JPanel incomes;
+	private ArrayList<Integer> incomeArray = new ArrayList<>();
 	
 	
 	public Incomes(JPanel i) {
@@ -29,38 +31,55 @@ public class Incomes {
 		addInc2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				addIncome("Hello", "1202");
+				addIncome();
 			}
 		});
 		this.incomes.add(addInc2);
 		
 		
+		JButton sumInc = new JButton("Sum Incomes");
+		sumInc.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				sumIncomes();
+			}
+		});
+		this.incomes.add(sumInc);
+		
+		
 	}
 	
-	public int getIncome() {
+	public int sumIncomes() {
+		int sum = 0;
+		for (int i : this.incomeArray) {
+			sum += i;
+		}
 		
-		//System.out.println(this.incomes.getComponent(0));
-		this.incomes.revalidate();
-		System.out.println(this.incomes.getComponentCount());
-		return 0;
+		System.out.println(sum);
 		
+		return sum;
 	}
 	
-	public int addIncome(String name, String ammt) {
+	
+	public int addIncome() {
 		
 		//System.out.println(this.incomes.getComponent(3));
 		
-		name = (String)((JComboBox) this.incomes.getComponent(3)).getSelectedItem();
-		ammt = (String)((JTextField)this.incomes.getComponent(1)).getText();
+		String name = (String)((JComboBox) this.incomes.getComponent(3)).getSelectedItem();
+		String ammt = (String)((JTextField)this.incomes.getComponent(1)).getText().trim();
 		JLabel newIncome = new JLabel(name);
 		JTextArea newAmmt = new JTextArea(ammt, 1, 8);
-		//System.out.println(name + ", " + ammt);
 		
 		this.incomes.add(newIncome);
 		this.incomes.add(newAmmt);
 		this.incomes.updateUI();
 		
-		return 0;
+		System.out.println(ammt+".");
+		Integer incomeAmmt = Integer.parseInt(ammt);
+		System.out.println(incomeAmmt);
+		this.incomeArray.add(incomeAmmt);
+		
+		return incomeAmmt;
 	}	
 	
 }
