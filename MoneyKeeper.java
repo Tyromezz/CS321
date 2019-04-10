@@ -25,6 +25,11 @@ public class MoneyKeeper {
 		
 		//The first JPanel contains a JLabel and JCombobox
 		final JPanel incomePanel = new JPanel();
+		
+		
+		Incomes inc = new Incomes(incomePanel);
+		inc.getIncome();
+		
 		JLabel incomeLabel = new JLabel("Incomes:");
 		JComboBox incms = new JComboBox(incomes);
 		JLabel priIncome = new JLabel("Primary income:");
