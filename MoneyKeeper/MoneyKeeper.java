@@ -27,8 +27,8 @@ public class MoneyKeeper {
 		final JPanel incomePanel = new JPanel();
 		
 		
-		Incomes1 inc = new Incomes1(incomePanel);
-		inc.getIncome();
+		//Incomes1 inc = new Incomes1(incomePanel);
+		//inc.getIncome();
 		
 		JLabel incomeLabel = new JLabel("Incomes:");
 		JComboBox incms = new JComboBox(incomes);
@@ -47,10 +47,11 @@ public class MoneyKeeper {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				JLabel newIncome = new JLabel((String)incms.getSelectedItem());
-				JTextField newIncomeAmt = new JTextField(incomeAmmt.getText(),8);
+				//JTextField newIncomeAmt = new JTextField(incomeAmmt.getText(),8);
+				JTextArea newAmmt = new JTextArea(incomeAmmt.getText(), 1, 8);
 				
 				incomePanel.add(newIncome);
-				incomePanel.add(newIncomeAmt);
+				incomePanel.add(newAmmt);
 				incomePanel.updateUI();
 			}
 		});
