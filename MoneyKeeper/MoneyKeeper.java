@@ -17,30 +17,16 @@ public class MoneyKeeper {
 		guiFrame.setSize(850, 800);
 		//This will center the JFrame in the middle of the screen
 		guiFrame.setLocationRelativeTo(null);
-		//Income Type Options
-		String[] incomes = { "Primary Job", "Second Job", "Side Job", "Hobby", "Other"};
 	
 		//Expense Options
 		String[] expenses = { "Rent", "Gas", "Insurance", "Food", "Utilities", "Entertainment"};
 		
-		//The first JPanel contains a JLabel and JCombobox
-		final JPanel incomePanel = new JPanel();
-		
-		
+		//The first JPanel instantiates an Incomes Class
+		JPanel incomePanel = new JPanel();
 		Incomes inc = new Incomes(incomePanel);
-		//inc.getIncome();
-		
-		JLabel incomeLabel = new JLabel("Incomes:");
-		JComboBox incms = new JComboBox(incomes);
-		JLabel priIncome = new JLabel("Primary income:");
-		JTextField incomeAmmt = new JTextField(8);
 		
 		
-		incomePanel.add(priIncome);
-		incomePanel.add(incomeAmmt);
-		incomePanel.add(incomeLabel);
-		incomePanel.add(incms);
-
+		
 		/*
 		 * 
 		 *  This is a basic new button, it creates a new internal class to re-define what to do when the button is pressed.
@@ -62,14 +48,6 @@ public class MoneyKeeper {
 		*/
 		
 		
-		JButton addInc2 = new JButton("Add Inc Class Call");
-		addInc2.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				inc.addIncome((String)incms.getSelectedItem(), incomeAmmt.getText());
-			}
-		});
-		incomePanel.add(addInc2);
 		
 		//Create the second JPanel. Add a JLabel and JList and
 		//make use the JPanel is not visible.
