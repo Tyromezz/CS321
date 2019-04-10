@@ -27,7 +27,7 @@ public class MoneyKeeper {
 		final JPanel incomePanel = new JPanel();
 		
 		
-		Incomes inc = new Incomes(incomePanel);
+		Incomes1 inc = new Incomes1(incomePanel);
 		inc.getIncome();
 		
 		JLabel incomeLabel = new JLabel("Incomes:");
