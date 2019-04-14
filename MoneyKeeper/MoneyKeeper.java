@@ -30,22 +30,13 @@ public class MoneyKeeper {
 		this.panelList.add(incomePanel);
 		
 		
-		/* Add this code when Expenses class is made
+		//The second JPanel instantiates an Expenses Class
+		//make suse the JPanel is not visible at start.
 		JPanel expensePanel = new JPanel();
-		Incomes exp = new Expenses(expensePanel);
+		Expenses exp = new Expenses(expensePanel);
 		this.panelList.add(expensePanel);
-		*/
-		
-		//Create the second JPanel. Add a JLabel and JList and
-		//make use the JPanel is not visible.
-		//DELETE THIS CODE BLOCK WHEN EXPENSES CLASS IS MADE
-		final JPanel expensePanel = new JPanel();
 		expensePanel.setVisible(false);
-		JLabel listLbl = new JLabel("Expenses:");
-		JList expns = new JList(expenses);
-		expns.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-		expensePanel.add(listLbl);
-		expensePanel.add(expns);
+		
 		
 		
 		JButton changeScreen = new JButton("Incomes or Expenses");

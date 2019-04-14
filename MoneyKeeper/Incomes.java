@@ -76,9 +76,9 @@ public class Incomes {
 		this.incomes.add(newAmmt);
 		this.incomes.updateUI();
 		
-		System.out.println(ammt+".");
+		//System.out.println(ammt+".");
 		Integer incomeAmmt = Integer.parseInt(ammt);
-		System.out.println(incomeAmmt);
+		//System.out.println(incomeAmmt);
 		this.incomeArray.add(incomeAmmt);
 		
 		return incomeAmmt;
