@@ -6,84 +6,41 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class Help {
- //private JPanel incomes;
- private ArrayList<Integer> incomeArray = new ArrayList<>();
+ private Object requestedClass;
  
- 
- public Help () {
-  //this.incomes = i;
-  
-  
-  //Income Type Options
-  String[] incomeOps = { "Primary Job", "Second Job", "Side Job", "Hobby", "Other"};
- 
-  
-  JLabel incomeLabel = new JLabel("Incomes:");
-  JComboBox incms = new JComboBox(incomeOps);
-  JLabel priIncome = new JLabel("Primary income:");
-  JTextField incomeAmmt = new JTextField(8);
-  
-  
-  this.incomes.add(priIncome);
-  this.incomes.add(incomeAmmt);
-  this.incomes.add(incomeLabel);
-  this.incomes.add(incms);
-  
-  JButton addInc2 = new JButton("Add Inc Class Call");
-  addInc2.addActionListener(new ActionListener() {
-   @Override
-   public void actionPerformed(ActionEvent event) {
-    addIncome();
-   }
-  });
-  this.incomes.add(addInc2);
-  
-  
-  JButton sumInc = new JButton("Sum Incomes");
-  sumInc.addActionListener(new ActionListener() {
-   @Override
-   public void actionPerformed(ActionEvent event) {
-    sumIncomes();
-   }
-  });
-  this.incomes.add(sumInc);
-  
-  
- }
- 
- public int sumIncomes() {
-  int sum = 0;
-  for (int i : this.incomeArray) {
-   sum += i;
-  }
-  
-  System.out.println(sum);
-  
-  return sum;
+ // Help Constructor.
+ public Help(Object c) {
+   this.requestedClass = c;
  }
  
  
- public int addIncome() {
-  
-  //System.out.println(this.incomes.getComponent(3));
-  
-  String name = (String)((JComboBox) this.incomes.getComponent(3)).getSelectedItem();
-  String ammt = (String)((JTextField)this.incomes.getComponent(1)).getText().trim();
-  JLabel newIncome = new JLabel(name);
-  JTextArea newAmmt = new JTextArea(ammt, 1, 8);
-  
-  this.incomes.add(newIncome);
-  this.incomes.add(newAmmt);
-  this.incomes.updateUI();
-  
-  //System.out.println(ammt+".");
-  Integer incomeAmmt = Integer.parseInt(ammt);
-  //System.out.println(incomeAmmt);
-  this.incomeArray.add(incomeAmmt);
-  
-  return incomeAmmt;
- } 
- 
- 
+ public String getHelpMessage() {
+   String message = "";
+   if (this.requestedClass instanceof Expenses) {
+     //Display Instructions for Expenses Class. 
+     message = "The Expenses feature allows you to add planned and unplanned expenses to your Financial Planner.\n To add a new expense, please enter the cost of the expense.\nThen select the type of expense by choosing from the expenses drop-down menu.\nFinally, click 'Add Expense' to add the new expense.";
+   }
+   
+   else if (this.requestedClass instanceof Incomes){
+     //Display Instructions for Incomes Class. 
+     message = "The Incomes feature allows you to add multiple streams of incomes (Primary, Secondary, Side Job, Hobby, Other) to your Financial Planner.\n To add a new income, please enter the amount of income you make.\nThen select the type of income by choosing from the incomes drop-down menu.\nFinally, click 'Add Income' to add the new income..";
 
+   }
+   
+   else if (this.requestedClass instanceof StudentDebt){
+     //Display Instructions for Student Debt Class. 
+     message = "The Student Debt feature allows you to add multiple student loans to your Financial Planner.\n To add a new loan, please enter the amount of load you took out.\nThen select the type of loan by choosing from the loans drop-down menu.\nFinally, click 'Add Loan' to add the new loan.";
+     
+   }
+   
+   else {
+     // Display Instructions for Investments Class. We might not need this as Investments is something the 
+     // program decides based on how much money you have available to spend, your student debt amount etc. 
+     message = "The Investments feature suggests multiple investments options based on your current income, total expenses and student loan amount."; 
+   }
+   
+   return message;
+   
+ }
+ 
 }
