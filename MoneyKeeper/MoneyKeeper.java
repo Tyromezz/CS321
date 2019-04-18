@@ -9,8 +9,9 @@ import java.awt.FlowLayout;
 public class MoneyKeeper {
  
  public ArrayList<JPanel> panelList = new ArrayList<>();
-  public Incomes inc;
+ public Incomes inc;
  public Expenses exp;
+ public Investments invest;
  public Help help;
  
  public static void main(String[] args) {
@@ -43,6 +44,13 @@ public class MoneyKeeper {
   this.panelList.add(expensePanel);
   expensePanel.setVisible(false);
   
+  //The second JPanel instantiates an Investments Class
+  //make suse the JPanel is not visible at start.
+  JPanel investmentPanel = new JPanel();
+  this.invest = new Investments(investmentPanel, this);
+  this.panelList.add(investmentPanel);
+  investmentPanel.setVisible(false);
+  
   
   
   JButton expenseScreen = new JButton("Expenses");
@@ -72,6 +80,18 @@ public class MoneyKeeper {
      }}
   });
   
+  JButton investmentButton = new JButton("Investments");
+  investmentButton.addActionListener(new ActionListener() {
+   @Override
+   public void actionPerformed(ActionEvent event) {
+     expensePanel.setVisible(false);
+     incomePanel.setVisible(false);
+     investmentPanel.setVisible(true);
+    
+     
+     }
+  });
+  
   
  
   
@@ -80,6 +100,7 @@ public class MoneyKeeper {
   buttonPanel.add(expenseScreen);
   buttonPanel.setLayout(new FlowLayout());
   buttonPanel.add(helpButton);
+  buttonPanel.add(investmentButton);
   guiFrame.add(buttonPanel, BorderLayout.SOUTH);
   
   
@@ -90,6 +111,7 @@ public class MoneyKeeper {
   guiFrame.setLayout(new FlowLayout());
   guiFrame.add(incomePanel, BorderLayout.CENTER);
   guiFrame.add(expensePanel, BorderLayout.CENTER);
+  guiFrame.add(investmentPanel, BorderLayout.CENTER);
   //guiFrame.add(expenseScreen, BorderLayout.SOUTH);
   //guiFrame.add(incomeScreen, BorderLayout.SOUTH);
   //make sure the JFrame is visible
