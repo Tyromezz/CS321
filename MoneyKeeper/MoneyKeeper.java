@@ -59,6 +59,7 @@ public class MoneyKeeper {
    public void actionPerformed(ActionEvent event) {
     expensePanel.setVisible(true);
     incomePanel.setVisible(false);
+    investmentPanel.setVisible(false);
    }
   });
   
@@ -68,6 +69,8 @@ public class MoneyKeeper {
    public void actionPerformed(ActionEvent event) {
     expensePanel.setVisible(false);
     incomePanel.setVisible(true);
+    investmentPanel.setVisible(false);
+    
    }
   });
   

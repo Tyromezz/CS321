@@ -36,10 +36,17 @@ public class Investments {
    
    
    if (deltaValue <= 100) {
-     
-   
-   
+     message = String.format("You have a total of $%d in your account. Currently, we do not suggest you invest your money in anything", deltaValue);
    }
+   
+   // Don't invest in something big. Small investments are ok.
+   //else if (deltaValue > 100 && deltaValue < ){}
+   
+   // Can invest more money in a larger 
+   //else {
+   
+   //}
+   
    return message;
  }
  
