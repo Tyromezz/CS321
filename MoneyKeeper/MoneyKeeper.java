@@ -52,6 +52,13 @@ public class MoneyKeeper {
   investmentPanel.setVisible(false);
   
   
+  //The second JPanel instantiates an Student Debt Class
+  //make suse the JPanel is not visible at start.
+  JPanel studentDebtPanel = new JPanel();
+  this.invest = new Investments(studentDebtPanel, this);
+  this.panelList.add(studentDebtPanel);
+  studentDebtPanel.setVisible(false);
+  
   
   JButton expenseScreen = new JButton("Expenses");
   expenseScreen.addActionListener(new ActionListener() {
@@ -95,6 +102,17 @@ public class MoneyKeeper {
      }
   });
   
+  JButton studentDebtButton = new JButton("Student Debt");
+  studentDebtButton.addActionListener(new ActionListener() {
+   @Override
+   public void actionPerformed(ActionEvent event) {
+     expensePanel.setVisible(false);
+     incomePanel.setVisible(false);
+     investmentPanel.setVisible(false);
+     studentDebtButton.setVisible(true);
+     }
+  });
+  
   
  
   
@@ -104,6 +122,7 @@ public class MoneyKeeper {
   buttonPanel.setLayout(new FlowLayout());
   buttonPanel.add(helpButton);
   buttonPanel.add(investmentButton);
+  buttonPanel.add(studentDebtButton);
   guiFrame.add(buttonPanel, BorderLayout.SOUTH);
   
   
@@ -115,6 +134,7 @@ public class MoneyKeeper {
   guiFrame.add(incomePanel, BorderLayout.CENTER);
   guiFrame.add(expensePanel, BorderLayout.CENTER);
   guiFrame.add(investmentPanel, BorderLayout.CENTER);
+  guiFrame.add(studentDebtPanel, BorderLayout.CENTER);
   //guiFrame.add(expenseScreen, BorderLayout.SOUTH);
   //guiFrame.add(incomeScreen, BorderLayout.SOUTH);
   //make sure the JFrame is visible

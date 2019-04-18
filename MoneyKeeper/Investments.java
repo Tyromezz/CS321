@@ -40,12 +40,12 @@ public class Investments {
    }
    
    // Don't invest in something big. Small investments are ok.
-   //else if (deltaValue > 100 && deltaValue < ){}
+   else if (deltaValue > 100 && deltaValue < 1000){}
    
-   // Can invest more money in a larger 
-   //else {
+   //Can invest more money in a larger 
+   else {
    
-   //}
+   }
    
    return message;
  }
