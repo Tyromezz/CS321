@@ -13,6 +13,7 @@ public class MoneyKeeper {
  public Expenses exp;
  public Investments invest;
  public Help help;
+ public StudentDebt debt;
  
  public static void main(String[] args) {
   new MoneyKeeper();
@@ -44,6 +45,7 @@ public class MoneyKeeper {
   this.panelList.add(expensePanel);
   expensePanel.setVisible(false);
   
+  
   //The second JPanel instantiates an Investments Class
   //make suse the JPanel is not visible at start.
   JPanel investmentPanel = new JPanel();
@@ -55,7 +57,7 @@ public class MoneyKeeper {
   //The second JPanel instantiates an Student Debt Class
   //make suse the JPanel is not visible at start.
   JPanel studentDebtPanel = new JPanel();
-  this.invest = new Investments(studentDebtPanel, this);
+  this.debt = new StudentDebt(studentDebtPanel);
   this.panelList.add(studentDebtPanel);
   studentDebtPanel.setVisible(false);
   

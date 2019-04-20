@@ -33,23 +33,36 @@ public class Investments {
  public String investmentSuggestion(){
    String message = "";
    int deltaValue = currentObject.calculateDelta();
+   int debtAmount = currentObject.debt.sumDebts();
    
-   
-   if (deltaValue <= 100) {
-     message = String.format("You have a total of $%d in your account. Currently, we do not suggest you invest your money in anything", deltaValue);
+   // Do not invest.
+   if (deltaValue <= 0) {
+     message = String.format("You have a total of $%d free to use in your account.\nCurrently, we do not suggest you invest your money in anything.", deltaValue);
    }
    
    // Don't invest in something big. Small investments are ok.
-   else if (deltaValue > 100 && deltaValue < 1000){}
-   
-   //Can invest more money in a larger 
-   else {
-   
+   else if (deltaValue > 0 && deltaValue <= 1000){
+     // They have debt with small amount of savings. Suggest to invest in paying off student debt. 
+     if (debtAmount > 0) {
+       message = String.format("You have a total of $%d free to use in your account.\nYou also have $%d in student debt. We suggest that you invest this money into paying off your loans.\nThe remaining (if any) can be used in smaller investments like stocks.", deltaValue, debtAmount);
+     }
+     // Don't have debt.
+     else {
+       message = String.format("You have a total of $%d free to use in your account\nYou may want to invest your money in small shares of the stock market, real estate, capital or gold.", deltaValue);
+     }
    }
-   
+     
+   //(delta > 1000). Can put more money into larger investments.
+   else {
+     // They have debt with large amount of savings. Suggest to invest in paying off student debt first. 
+     if (debtAmount > 0) {
+       message = String.format("You have a total of $%d free to use in your account.\nYou also have $%d in student debt. We suggest that you invest this money into paying off your loans first.\nThe remaining (if any) can be used in investments like stocks, real estate or capital.", deltaValue, debtAmount);
+     }
+     else {
+       // Don't have debt.
+       message = String.format("You have a total of $%d free to use in your account\nYou may want to invest this money in the stock market, real estate, capital or gold.", deltaValue);   
+     }
+   }
    return message;
  }
- 
- 
- 
 }
