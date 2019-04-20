@@ -13,19 +13,18 @@ public class Investments {
    this.investmentPanel = investmentPanel;
    this.currentObject = currentObject;
   
-  // Investment Type Options
-  String[] investOps = {"Primary Investment", "Second Investement"};
+ 
   
-  JLabel     investLabel = new JLabel    ("Investments: "); 
+  //JLabel     investLabel = new JLabel    ("Investments: "); 
   
 
-  this.investmentPanel.add (investLabel);
+  //this.investmentPanel.add (investLabel);
   
-  JButton addInv2 = new JButton ("Set Values");
+  JButton addInv2 = new JButton ("Suggest Investment");
   addInv2.addActionListener (new ActionListener() {
    @Override
    public void actionPerformed (ActionEvent event) {
-    //addInvest();
+    investmentSuggestion();
    }
   });
   this.investmentPanel.add(addInv2);
@@ -63,6 +62,10 @@ public class Investments {
        message = String.format("You have a total of $%d free to use in your account\nYou may want to invest this money in the stock market, real estate, capital or gold.", deltaValue);   
      }
    }
+   
+   JTextArea newAmmt = new JTextArea(message, 1, 8);
+   this.investmentPanel.add(newAmmt);
+   this.investmentPanel.updateUI();
    return message;
  }
 }
