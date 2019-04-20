@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 
 public class MoneyKeeper {
- 
  public ArrayList<JPanel> panelList = new ArrayList<>();
  public Incomes inc;
  public Expenses exp;
@@ -69,6 +68,7 @@ public class MoneyKeeper {
     expensePanel.setVisible(true);
     incomePanel.setVisible(false);
     investmentPanel.setVisible(false);
+    
    }
   });
   
@@ -79,7 +79,7 @@ public class MoneyKeeper {
     expensePanel.setVisible(false);
     incomePanel.setVisible(true);
     investmentPanel.setVisible(false);
-    
+    studentDebtPanel.setVisible(false);
    }
   });
   
@@ -91,6 +91,7 @@ public class MoneyKeeper {
      expensePanel.setVisible(false);
      incomePanel.setVisible(false);
      investmentPanel.setVisible(true);
+     studentDebtPanel.setVisible(false);
     
      
      }
@@ -103,24 +104,32 @@ public class MoneyKeeper {
      expensePanel.setVisible(false);
      incomePanel.setVisible(false);
      investmentPanel.setVisible(false);
-     studentDebtButton.setVisible(true);
+     studentDebtPanel.setVisible(true);
      }
   });
   
   
   
   JButton helpButton = new JButton("Help");
-  incomeScreen.addActionListener(new ActionListener() {
+  helpButton.addActionListener(new ActionListener() {
    @Override
    public void actionPerformed(ActionEvent event) {
+     //System.out.println(incomePanel.isVisible());
+     //System.out.println(expensePanel.isVisible());
+     //System.out.println(investmentPanel.isVisible());
+     //System.out.println(studentDebtPanel.isVisible()); 
+     
+     
      if (incomePanel.isVisible()){
        help.getHelpMessage(Incomes.class);
      }
      else if (expensePanel.isVisible()){
+       
        help.getHelpMessage(Expenses.class);
      }
      
      else if (investmentPanel.isVisible()){
+       
        help.getHelpMessage(Investments.class);
      }
      
