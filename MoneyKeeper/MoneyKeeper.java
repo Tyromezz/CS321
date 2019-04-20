@@ -83,14 +83,6 @@ public class MoneyKeeper {
    }
   });
   
-  JButton helpButton = new JButton("Help");
-  incomeScreen.addActionListener(new ActionListener() {
-   @Override
-   public void actionPerformed(ActionEvent event) {
-     if (incomePanel.isVisible()){
-       help.getHelpMessage(Incomes.class);
-     }}
-  });
   
   JButton investmentButton = new JButton("Investments");
   investmentButton.addActionListener(new ActionListener() {
@@ -115,6 +107,29 @@ public class MoneyKeeper {
      }
   });
   
+  
+  
+  JButton helpButton = new JButton("Help");
+  incomeScreen.addActionListener(new ActionListener() {
+   @Override
+   public void actionPerformed(ActionEvent event) {
+     if (incomePanel.isVisible()){
+       help.getHelpMessage(Incomes.class);
+     }
+     else if (expensePanel.isVisible()){
+       help.getHelpMessage(Expenses.class);
+     }
+     
+     else if (investmentPanel.isVisible()){
+       help.getHelpMessage(Investments.class);
+     }
+     
+     else if (studentDebtButton.isVisible()){
+       help.getHelpMessage(StudentDebt.class);
+     }
+   }
+   
+  });
   
  
   

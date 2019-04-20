@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class Help {
- private Object requestedClass;
+ //private Object requestedClass;
  
  // Help Constructor.
  public Help() {
@@ -25,12 +25,12 @@ public class Help {
      //Display Instructions for Incomes Class. 
      message = "The Incomes feature allows you to add multiple streams of incomes (Primary, Secondary, Side Job, Hobby, Other) to your Financial Planner.\n To add a new income, please enter the amount of income you make.\nThen select the type of income by choosing from the incomes drop-down menu.\nFinally, click 'Add Income' to add the new income..";
    }
-   /*
+   
    else if (requestedClass instanceof StudentDebt){
      //Display Instructions for Student Debt Class. 
      message = "The Student Debt feature allows you to enter multiple student loans to your Financial Planner.\n To add a new loan, please enter the amount of load you took out.\nThen select the type of loan by choosing from the loans drop-down menu.\nFinally, click 'Add Loan' to add the new loan."; 
    }
-   */
+   
    else {
      // Display Instructions for Investments Class. We might not need this as Investments is something the 
      // program decides based on how much money you have available to spend, your student debt amount etc. 
