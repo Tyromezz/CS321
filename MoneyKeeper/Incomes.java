@@ -3,6 +3,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 import javax.swing.*;
 
@@ -67,7 +68,7 @@ public class Incomes {
   sumPanel.add(incomeSum2);
   this.incomes.add(sumPanel);
   this.incomes.updateUI();
-  
+  JOptionPane.showMessageDialog(null, sum, "Sum Expense Display", JOptionPane.INFORMATION_MESSAGE);
   return sum;
  }
  
