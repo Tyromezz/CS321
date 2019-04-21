@@ -29,7 +29,7 @@ public class Incomes {
   this.incomes.add(incomeLabel);
   this.incomes.add(incms);
   
-  JButton addInc2 = new JButton("Add Inc Class Call");
+  JButton addInc2 = new JButton("Add Income");
   addInc2.addActionListener(new ActionListener() {
    @Override
    public void actionPerformed(ActionEvent event) {

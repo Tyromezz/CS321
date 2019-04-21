@@ -23,7 +23,6 @@ public class Help {
    }
    
    else if (requestedClass == Incomes.class){
-     System.out.println("GOT HERE");
      //Display Instructions for Incomes Class. 
      message = "The Incomes feature allows you to add multiple streams of incomes (Primary, Secondary, Side Job, Hobby, Other) to your Financial Planner.\n To add a new income, please enter the amount of money you make.\nThen select the type of income by choosing from the drop-down menu.\nFinally, click 'Add Income' to add the new income.";
    }
