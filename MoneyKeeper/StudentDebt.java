@@ -71,10 +71,10 @@ public class StudentDebt {
         this.studentDebt.updateUI();
 
         //System.out.println (ammt + ".");
-        Integer expenseAmmt = Integer.parseInt (ammt);
+        Integer debtAmmt = Integer.parseInt (ammt);
         //System.out.println (expenseAmmt);
-        //this.studentDebt.add(expenseAmmt);
+        this.studentDebtArray.add(debtAmmt);
 
-        return expenseAmmt;
+        return debtAmmt;
     }
 }
