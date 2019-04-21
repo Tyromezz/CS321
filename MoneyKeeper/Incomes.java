@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -58,6 +59,14 @@ public class Incomes {
   }
   
   System.out.println(sum);
+  
+  JPanel sumPanel = new JPanel();
+  JLabel incomeSum1 = new JLabel("Income Sum:");
+  JLabel incomeSum2 = new JLabel(Integer.toString(sum));
+  sumPanel.add(incomeSum1);
+  sumPanel.add(incomeSum2);
+  this.incomes.add(sumPanel);
+  this.incomes.updateUI();
   
   return sum;
  }
