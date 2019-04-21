@@ -74,6 +74,7 @@ public class moneyKeeper4 extends javax.swing.JFrame {
         debts = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Money Keeper");
 
         Incomes.setText("Incomes");
         Incomes.addActionListener(new java.awt.event.ActionListener() {
