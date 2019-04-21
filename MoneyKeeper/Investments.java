@@ -32,7 +32,7 @@ public class Investments {
  public String investmentSuggestion(){
    String message = "";
    int deltaValue = currentObject.calculateDelta();
-   int debtAmount = currentObject.debt.sumDebts();
+   int debtAmount = currentObject.debt.sumStudentDebt();
    
    // Do not invest.
    if (deltaValue <= 0) {

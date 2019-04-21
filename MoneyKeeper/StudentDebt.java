@@ -6,74 +6,75 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class StudentDebt {
-	private JPanel debts;
-	private ArrayList<Integer> debtArray = new ArrayList<>();
-	
-	public StudentDebt (JPanel i) {
-		this.debts = i;
-		
-		// Debt Type Options
-		String[] debtOps = { "Primary Debt", "Second Debt"};
-		
-		JLabel debtLabel = new JLabel ("Debts:");
-		JComboBox debts = new JComboBox (debtOps);
-		JLabel priDebt = new JLabel ("Primary debt:");
-		JTextField debtAmmt = new JTextField(8);
-		
-		this.debts.add(priDebt);
-		this.debts.add(debtAmmt);
-		this.debts.add(debtLabel);
-		this.debts.add(debts);
-		
-		JButton addDpt2 = new JButton ("Add Dpt Class CAll");
-		addDpt2.addActionListener (new ActionListener() {
-			@Override
-			public void actionPerformed (ActionEvent event) {
-				addDebt();
-			}
-		});
-		this.debts.add (addDpt2);
-		
-		JButton sumDpt = new JButton ("Sum Debts");
-		sumDpt.addActionListener (new ActionListener() {
-			@Override
-			public void actionPerformed (ActionEvent event) {
-				sumDebts();
-			}
-		});
-		this.debts.add (sumDpt);
-	}
-	
-	public int sumDebts() {
-		int sum = 0;
-		for (int i : this.debtArray) {
-			sum += i;
-		}
-		
-		System.out.println (sum);
-		
-		return sum;
-	}
-	
-	public int addDebt() {
-		
-		// System.out.println (this.debts.getComponent(3));
-		
-		String name = (String) ((JComboBox)  this.debts.getComponent(3)).getSelectedItem();
-		String ammt = (String) ((JTextField) this.debts.getComponent(1)).getText().trim();
-		JLabel newDebt = new JLabel (name);
-		JTextArea newAmmt = new JTextArea (ammt, 1, 8);
-		
-		this.debts.add(newDebt);
-		this.debts.add(newAmmt);
-		this.debts.updateUI();
-		
-		// System.out.println (ammt + ".");
-		Integer debtAmmt = Integer.parseInt (ammt);
-		// System.out.println (debtAmmt);
-		this.debtArray.add (debtAmmt);
-		
-		return debtAmmt;
-	}
+    private JPanel studentDebt;
+    private ArrayList<Integer> studentDebtArray = new ArrayList<>();
 
+    public StudentDebt (JPanel i) {
+        this.studentDebt = i;
+
+        // Student Type Option? We will be having the user type in a School name that they owe money to
+        String[] studentDebtSchool = { "School"}; // probably wont need this
+
+        JLabel debtLabel = new JLabel ("School:"); // Labels the array, probably won't need bc array isn't needed
+        JComboBox expns = new JComboBox (studentDebtSchool);
+        JLabel debtCostLabel = new JLabel ("Debt Amount:");
+        JTextField debtAmmt = new JTextField(8);
+
+        // add name of school and the debt amount
+        this.studentDebt.add (debtCostLabel);
+        this.studentDebt.add (debtAmmt);
+        this.studentDebt.add (debtLabel);
+        this.studentDebt.add (expns);
+
+        JButton addDebt2 = new JButton ("Add Debt (School)");
+        addDebt2.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed (ActionEvent event) {
+                addDebt();
+            }
+        });
+        this.studentDebt.add (addDebt2);
+
+        JButton sumDebt = new JButton ("Sum Expenses");
+        sumDebt.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed (ActionEvent event) {
+                sumStudentDebt();
+            }
+        });
+        this.studentDebt.add (sumDebt);
+
+    }
+
+    public int sumStudentDebt() {
+        int sum = 0;
+        for (int i : this.studentDebtArray) {
+            sum += i;
+        }
+
+        System.out.println (sum);
+
+        return sum;
+    }
+
+    public int addDebt() {
+
+        // System.out.println (this.expenses.getComponent(3));
+
+        String name = (String) ( (JComboBox)  this.studentDebt.getComponent(3)).getSelectedItem();
+        String ammt = (String) ( (JTextField) this.studentDebt.getComponent(1)).getText().trim();
+        JLabel newExpense = new JLabel (name);
+        JTextArea newAmmt = new JTextArea (ammt, 1, 8);
+
+        this.studentDebt.add (newExpense);
+        this.studentDebt.add (newAmmt);
+        this.studentDebt.updateUI();
+
+        //System.out.println (ammt + ".");
+        Integer expenseAmmt = Integer.parseInt (ammt);
+        //System.out.println (expenseAmmt);
+        //this.studentDebt.add(expenseAmmt);
+
+        return expenseAmmt;
+    }
 }
