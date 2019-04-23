@@ -2,7 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 import javax.swing.*;
 
@@ -18,7 +17,7 @@ public class Expenses {
   
   JLabel expenseLabel = new JLabel ("Expenses:");
   JComboBox expns = new JComboBox (expenseOps);
-  JLabel costLabel = new JLabel ("Cost:");
+  JLabel costLabel = new JLabel ("Cost (No commas):");
   JTextField expenseAmmt = new JTextField(8);
   
   this.expenses.add (costLabel);
@@ -53,7 +52,13 @@ public class Expenses {
   }
   
   System.out.println (sum);
-  JOptionPane.showMessageDialog(null, sum, "Sum Expense Display", JOptionPane.INFORMATION_MESSAGE);
+        JPanel sumPanel = new JPanel();
+        JLabel incomeSum1 = new JLabel("Expenses Sum: $");
+        JLabel incomeSum2 = new JLabel(Integer.toString(sum));
+        sumPanel.add(incomeSum1);
+        sumPanel.add(incomeSum2);
+        this.expenses.add(sumPanel);
+        this.expenses.updateUI();
   
   return sum;
  }

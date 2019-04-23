@@ -22,7 +22,7 @@ public class Incomes {
   
   JLabel incomeLabel = new JLabel("Incomes:");
   JComboBox incms = new JComboBox(incomeOps);
-  JLabel priIncome = new JLabel("Primary income (No commas):");
+  JLabel priIncome = new JLabel("Amount (No commas):");
   JTextField incomeAmmt = new JTextField(8);
   
   
@@ -62,13 +62,12 @@ public class Incomes {
   System.out.println(sum);
   
   JPanel sumPanel = new JPanel();
-  JLabel incomeSum1 = new JLabel("Income Sum:");
+  JLabel incomeSum1 = new JLabel("Income Sum: $");
   JLabel incomeSum2 = new JLabel(Integer.toString(sum));
   sumPanel.add(incomeSum1);
   sumPanel.add(incomeSum2);
   this.incomes.add(sumPanel);
   this.incomes.updateUI();
-  JOptionPane.showMessageDialog(null, sum, "Sum Expense Display", JOptionPane.INFORMATION_MESSAGE);
   return sum;
  }
  

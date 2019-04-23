@@ -47,7 +47,7 @@ public class Investments {
      }
      // Don't have debt.
      else {
-       message = String.format("You have a total of $%d free to use in your account\nYou may want to invest your money in small shares of the stock market, real estate, capital or gold.", deltaValue);
+       message = String.format("You have a total of $%d free to use in your account.\nYou may want to invest your money in small shares of the stock market, real estate, capital or gold.", deltaValue);
      }
    }
      
@@ -59,7 +59,7 @@ public class Investments {
      }
      else {
        // Don't have debt.
-       message = String.format("You have a total of $%d free to use in your account\nYou may want to invest this money in the stock market, real estate, capital or gold.", deltaValue);   
+       message = String.format("You have a total of $%d free to use in your account.\nYou may want to invest this money in the stock market, real estate, capital or gold.", deltaValue);   
      }
    }
    
