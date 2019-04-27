@@ -59,7 +59,7 @@ public class Incomes {
    sum += i;
   }
   
-  System.out.println(sum);
+  //System.out.println(sum);
   
   JPanel sumPanel = new JPanel();
   JLabel incomeSum1 = new JLabel("Income Sum: $");
@@ -91,7 +91,19 @@ public class Incomes {
   this.incomeArray.add(incomeAmmt);
   
   return incomeAmmt;
- } 
+ }
+ 
+ // Overloaded addIncome() function to accept a specified input. Used in testing our code. 
+ public int addIncome(int ammt) {
+   
+  Integer incomeAmmt = ammt;
+  this.incomeArray.add(incomeAmmt);
+  
+  return incomeAmmt;
+ }
+ 
+ 
+ 
  
  
 
