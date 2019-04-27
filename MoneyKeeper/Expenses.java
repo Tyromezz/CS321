@@ -83,4 +83,15 @@ public class Expenses {
   
   return expenseAmmt;
  }
+ 
+ 
+ // Overloaded addExpense() function to accept a specified input. Used in testing our code. 
+ public int addExpense(int ammt) {
+   
+  Integer expenseAmmt = ammt;
+  this.expenseArray.add(expenseAmmt);
+  
+  return expenseAmmt;
+ }
+ 
 }

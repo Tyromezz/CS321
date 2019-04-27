@@ -77,4 +77,15 @@ public class StudentDebt {
 
         return debtAmmt;
     }
+    
+ // Overloaded addDebt() function to accept a specified input. Used in testing our code. 
+ public int addDebt(int ammt) {
+   
+  Integer debtAmmt = ammt;
+  this.studentDebtArray.add(debtAmmt);
+  
+  return debtAmmt;
+ }
+    
+    
 }

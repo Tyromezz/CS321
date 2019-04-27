@@ -13,6 +13,6 @@ public class InvestmentsTests {
   
   
   // Investments Tests
-  @Test (timeout=2000) public void test_Investments_1(){ assertEquals("You have a total of $%d free to use in your account.\nCurrently, we do not suggest you invest your money in anything.", mk_object.invest.investmentSuggestion()); }
+  @Test (timeout=2000) public void test_Investments_1(){ assertEquals("You have a total of $0 free to use in your account.\nCurrently, we do not suggest you invest your money in anything.", mk_object.invest.investmentSuggestion()); }
 
 }
