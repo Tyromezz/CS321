@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
+import javax.swing.JOptionPane;
 
 public class MoneyKeeper {
  public ArrayList<JPanel> panelList = new ArrayList<>();
@@ -118,24 +119,29 @@ public class MoneyKeeper {
      //System.out.println(expensePanel.isVisible());
      //System.out.println(investmentPanel.isVisible());
      //System.out.println(studentDebtPanel.isVisible()); 
-     
+     String message = "";
      
      if (incomePanel.isVisible()){
-       help.getHelpMessage(Incomes.class);
+       message = help.getHelpMessage(Incomes.class);
      }
      else if (expensePanel.isVisible()){
        
-       help.getHelpMessage(Expenses.class);
+       message = help.getHelpMessage(Expenses.class);
      }
      
      else if (investmentPanel.isVisible()){
        
-       help.getHelpMessage(Investments.class);
+       message = help.getHelpMessage(Investments.class);
      }
      
      else if (studentDebtButton.isVisible()){
-       help.getHelpMessage(StudentDebt.class);
+      message = help.getHelpMessage(StudentDebt.class);
      }
+     
+     // Display the appropriate help message as a seperate dialog box.
+     JOptionPane.showMessageDialog(null, message, "Help Display", JOptionPane.INFORMATION_MESSAGE);
+     
+     
    }
    
   });

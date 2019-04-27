@@ -25,6 +25,7 @@ public class Help {
    else if (requestedClass == Incomes.class){
      //Display Instructions for Incomes Class. 
      message = "The Incomes feature allows you to add multiple streams of incomes (Primary, Secondary, Side Job, Hobby, Other) to your Financial Planner.\nTo add a new income, please enter the amount of money you make.\nThen select the type of income by choosing from the drop-down menu.\nFinally, click 'Add Income' to add the new income.";
+   
    }
    
    else if (requestedClass == StudentDebt.class){
@@ -38,9 +39,8 @@ public class Help {
      message = "The Investments feature suggests multiple investments options based on your current income, total expenses and (any) student loan amount."; 
    }
    
-   JOptionPane.showMessageDialog(null, message, "Help Display", JOptionPane.INFORMATION_MESSAGE);
-   
-   
+   //JOptionPane.showMessageDialog(null, message, "Help Display", JOptionPane.INFORMATION_MESSAGE);
+    
    return message;
  }
  
