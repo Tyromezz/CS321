@@ -171,7 +171,6 @@ public class MoneyKeeper {
   //guiFrame.add(incomeScreen, BorderLayout.SOUTH);
   //make sure the JFrame is visible
   guiFrame.setVisible(true);
-  
  }
     // Calculate the difference between income and expenses. Used in multiple
  // functions throughout the application. Allows program to plan for various extra investments,
