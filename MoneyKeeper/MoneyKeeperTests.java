@@ -10,7 +10,15 @@ public class MoneyKeeperTests {
   
   static MoneyKeeper mk_object = new MoneyKeeper(); 
 
-  
+  @Before
+  public void init(){
+    //Don't do any setup across all
+  }
+
+  @After
+  public void clear(){
+    //clear data after each test
+  }
   
   // Money Keeper Tests
   @Test (timeout=2000) public void test_MoneyKeeper_setup1(){
