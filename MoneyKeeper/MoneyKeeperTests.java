@@ -13,6 +13,17 @@ public class MoneyKeeperTests {
   
   
   // Money Keeper Tests
-  @Test (timeout=2000) public void test_MoneyKeeper_1(){ }
+  @Test (timeout=2000) public void test_MoneyKeeper_1(){
+	  System.out.println(mk_object.panelList.listIterator());
+	  
+	 
+	  
+  }
+  
+//Money Keeper Tests
+ @Test (timeout=2000) public void test_MoneyKeeper_population(){
+	  
+	  
+ }
 
 }
