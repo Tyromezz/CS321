@@ -41,6 +41,16 @@ public class InvestmentsTests {
     mk_object3.exp.addExpense(500); 
     mk_object3.exp.addExpense(97500); //Delta should be 1000.   
     assertEquals(message, mk_object3.invest.investmentSuggestion());
+    
+    MoneyKeeper mk_object3a = new MoneyKeeper();
+    message = "You have a total of $978 free to use in your account.\nYou may want to invest your money in small shares of the stock market, real estate, capital or gold.";
+    mk_object3a.inc.addIncome(100000);
+    mk_object3a.inc.addIncome(754); // add multiple incomes.
+    mk_object3a.exp.addExpense(1000);
+    mk_object3a.exp.addExpense(999); 
+    mk_object3a.exp.addExpense(97777); //Delta should be 978.   
+    assertEquals(message, mk_object3a.invest.investmentSuggestion());
+    
   
   }
   
