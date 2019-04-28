@@ -3,16 +3,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.*;
 
-public class ExpensesTests {
+public class StudentDebtTests {
   public static void main(String args[]){
-    org.junit.runner.JUnitCore.main("ExpensesTests");
+    org.junit.runner.JUnitCore.main("StudentDebtTests");
   }
   
   static MoneyKeeper mk_object = new MoneyKeeper(); 
 
   
   
-  // Expenses Tests
-  @Test (timeout=2000) public void test_Incomes_1(){ }
+  // Student Debt  Tests
+  @Test (timeout=2000) public void test_StudentDebt_1(){ }
 
 }
