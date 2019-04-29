@@ -10,15 +10,6 @@ public class MoneyKeeperTests {
   
   static MoneyKeeper mk_object = new MoneyKeeper(); 
 
-  @Before
-  public void init(){
-    //Don't do any setup across all
-  }
-
-  @After
-  public void clear(){
-    //clear data after each test
-  }
   
   // Money Keeper Tests
   @Test (timeout=2000) public void test_MoneyKeeper_setup1(){
@@ -38,6 +29,7 @@ public class MoneyKeeperTests {
  
  
  @Test (timeout=2000) public void test_MoneyKeeper_calculateDeltaNeg(){
+	 mk_object = new MoneyKeeper();
 	 mk_object.inc.addIncome(500);
 	 mk_object.exp.addExpense(600);
 	 assertEquals(mk_object.calculateDelta(), -100);
@@ -46,6 +38,7 @@ public class MoneyKeeperTests {
  
  
  @Test (timeout=2000) public void test_MoneyKeeper_calculateDeltaZero(){
+	 mk_object = new MoneyKeeper();
 	 mk_object.inc.addIncome(500);
 	 mk_object.exp.addExpense(500);
 	 assertEquals(mk_object.calculateDelta(), 0);
@@ -53,8 +46,8 @@ public class MoneyKeeperTests {
  }
  
  @Test (timeout=2000) public void test_MoneyKeeper_calculateDeltaSetup(){
+	 mk_object = new MoneyKeeper();
 	 assertEquals(mk_object.calculateDelta(), 0);
-	  
  }
 
 }
